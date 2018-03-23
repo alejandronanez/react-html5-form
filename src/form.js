@@ -2,29 +2,13 @@ import * as React from 'react';
 import * as cx from 'classnames';
 import { FormHTMLAttributes } from 'react';
 
-// export interface FormProps {
-//   className?: string;
-//   render: Function;
-//   onSubmit: Function;
-// }
-
-// export interface RenderProps {
-//   isFormInvalid: boolean;
-//   checkValidity: any;
-// }
-
-// interface State {
-//   isFormInvalid: boolean;
-// }
-
-// type Props = FormProps & FormHTMLAttributes<HTMLFormElement>;
-
 export class HTML5Form extends React.Component {
-  state = {
-    isFormInvalid: true
-  };
-
-  formElement: any = null;
+  constructor() {
+    this.formElement = null;
+    this.state = {
+      isFormInvalid: true
+    };
+  }
 
   componentDidMount() {
     this.checkValidity();
@@ -59,6 +43,6 @@ export class HTML5Form extends React.Component {
 
 HTML5Form.defaultProps = {
   className: '',
-  render(params: RenderProps) {},
+  render(params) {},
   onSubmit() {}
 };
